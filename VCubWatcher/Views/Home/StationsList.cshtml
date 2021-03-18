@@ -3,5 +3,14 @@
     ViewData["Title"] = "StationsList";
 }
 
-<h1>StationsList</h1>
+@model List<BikeStations>
+
+<h1>Liste des stations</h1>
+
+<ul>
+    @foreach (var station in Model)
+    {
+        <li>@station.Name</li>
+    }
+</ul>
 
