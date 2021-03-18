@@ -22,8 +22,11 @@ namespace VCubWatcher.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult StationsList()
+        {
+            return View();
+        }
+        public IActionResult Favorites()
         {
             return View();
         }
