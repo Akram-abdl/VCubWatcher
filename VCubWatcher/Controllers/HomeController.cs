@@ -35,7 +35,8 @@ namespace VCubWatcher.Controllers
         }
         public IActionResult Map()
         {
-            return View();
+            var stations = GetBikeStationsFromApi();
+            return View(stations);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -56,7 +57,8 @@ namespace VCubWatcher.Controllers
                 //d'un flux de données vers des objets => Déserialisation
                 //d'objets vers un flux de données => Sérialisation
                 var result = JsonConvert.DeserializeObject<List<BikeStations>>(stringResult.Result);
-                return result;
+                var orderedList = result.OrderBy(BikeStations => BikeStations.Name).ToList();
+                return orderedList;
             }
         }
     }

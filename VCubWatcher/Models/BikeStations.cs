@@ -36,5 +36,6 @@ namespace VCubWatcher.Models
 
         [JsonProperty("longitude")]
         public string Longitude { get; set; }
+        public bool IsFavorite { get; set; }
     }
 }

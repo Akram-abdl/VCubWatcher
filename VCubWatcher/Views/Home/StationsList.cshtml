@@ -5,12 +5,31 @@
 
 @model List<BikeStations>
 
-<h1>Liste des stations</h1>
+<h1>Station List</h1>
 
-<ul>
+<table class="table">
+
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Station Name</th>
+            <th scope="col">Total Bikes</th>
+            <th scope="col">Bike Count</th>
+            <th scope="col">Electric Bike Count</th>
+        </tr>
+    </thead>
     @foreach (var station in Model)
     {
-        <li>@station.Name</li>
+        <tbody>
+            <tr>
+                <th scope="row">@station.Id</th>
+                <td>@station.Name</td>
+                <td>@station.BikeCountTotal</td>
+                <td>@station.BikeCount</td>
+                <td>@station.ElectricBikeCount</td>
+            </tr>
+        </tbody>
     }
-</ul>
+</table>
+
 
